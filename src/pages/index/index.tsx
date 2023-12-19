@@ -8,7 +8,7 @@ export default function Index() {
   });
 
   return (
-    <View className="index">
+    <View className="flex-center text-red-400 text-40px">
       <Text>Hello world!</Text>
     </View>
   );

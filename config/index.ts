@@ -1,5 +1,6 @@
 import { defineConfig, type UserConfigExport } from '@tarojs/cli';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import UnoCSS from 'unocss/webpack'; // 导入unocss
 import devConfig from './dev';
 import prodConfig from './prod';
 
@@ -49,6 +50,7 @@ export default defineConfig(async (merge) => {
         },
       },
       webpackChain(chain) {
+        chain.plugin('unocss').use(UnoCSS());
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin);
       },
     },
@@ -78,6 +80,7 @@ export default defineConfig(async (merge) => {
         },
       },
       webpackChain(chain) {
+        chain.plugin('unocss').use(UnoCSS());
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin);
       },
     },
