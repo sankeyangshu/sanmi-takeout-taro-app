@@ -1,9 +1,33 @@
 export default defineAppConfig({
-  pages: ['pages/index/index'],
+  pages: ['pages/Home/index', 'pages/Order/index', 'pages/Mine/index'],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black',
+    navigationBarBackgroundColor: '#157658',
+    navigationBarTitleText: '三米外卖',
+    navigationBarTextStyle: 'white',
+  },
+  tabBar: {
+    selectedColor: '#157658',
+    color: '#666',
+    list: [
+      {
+        pagePath: 'pages/Home/index', // 菜单路径
+        text: '首页',
+        iconPath: 'assets/images/home.png', // 默认图标
+        selectedIconPath: 'assets/images/home-active.png', // 选中图标
+      },
+      {
+        pagePath: 'pages/Order/index',
+        text: '订单',
+        iconPath: 'assets/images/order.png',
+        selectedIconPath: 'assets/images/order-active.png',
+      },
+      {
+        pagePath: 'pages/Mine/index',
+        text: '我的',
+        iconPath: 'assets/images/mine.png',
+        selectedIconPath: 'assets/images/mine-active.png',
+      },
+    ],
   },
 });

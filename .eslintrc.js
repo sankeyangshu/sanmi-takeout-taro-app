@@ -28,6 +28,7 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/promise-function-async': 'off',
     'import/no-commonjs': 'off',
+    'import/first': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'simple-import-sort/imports': [
