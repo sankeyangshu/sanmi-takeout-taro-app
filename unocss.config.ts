@@ -1,6 +1,7 @@
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders';
 import { presetWeapp } from 'unocss-preset-weapp';
 import { transformerClass } from 'unocss-preset-weapp/transformer';
-import { defineConfig, transformerDirectives } from 'unocss';
+import { defineConfig, presetIcons, transformerDirectives } from 'unocss';
 
 export default defineConfig({
   presets: [
@@ -10,10 +11,22 @@ export default defineConfig({
       platform: 'taro',
       taroWebpack: 'webpack5',
     }),
+    presetIcons({
+      scale: 1,
+      warn: true,
+      extraProperties: {
+        display: 'inline-block',
+      },
+      collections: {
+        local: FileSystemIconLoader('./src/assets/icons'),
+      },
+    }),
   ],
   shortcuts: [
     {
       'flex-center': 'flex justify-center items-center',
+      'flex-justify': 'flex justify-center',
+      'flex-align': 'flex items-center',
     },
   ],
   transformers: [

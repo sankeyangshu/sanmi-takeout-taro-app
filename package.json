@@ -74,6 +74,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.5",
+    "@nutui/icons-react-taro": "^0.0.5",
     "@nutui/nutui-react-taro": "^2.3.2",
     "@tarojs/components": "3.6.20",
     "@tarojs/helper": "3.6.20",
@@ -97,6 +98,7 @@
     "@babel/core": "^7.8.0",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@iconify/utils": "^2.1.13",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@tarojs/cli": "3.6.20",
     "@tarojs/taro-loader": "3.6.20",
