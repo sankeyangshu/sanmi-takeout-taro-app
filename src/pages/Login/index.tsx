@@ -63,21 +63,21 @@ const Login = () => {
         {/* 其他登录方式 */}
         <View className="flex-center flex-row mt-[200rpx]">
           <View className="pr-[40rpx]">
-            <View className="i-local-wechat font-size-[64rpx] color-[#83DC42]" />
+            <View className="i-local-wechat text-[64rpx] color-[#83DC42]" />
           </View>
           <View className="pr-[40rpx]">
-            <View className="i-local-weibo font-size-[64rpx] color-[#F9221D]" />
+            <View className="i-local-weibo text-[64rpx] color-[#F9221D]" />
           </View>
           <View className="pr-[40rpx]">
             <Github size={32} color="#24292E" />
           </View>
         </View>
 
-        <View className="flex-center flex-row mt-[60rpx] color-black font-size-[28rpx]">
+        <View className="flex-center flex-row mt-[60rpx] color-black text-[28rpx]">
           <View className="color-[#1E90FF]" onClick={onFindPassword}>
             找回密码
           </View>
-          <Text className="mx-[20rpx] font-size-[24rpx]">|</Text>
+          <Text className="mx-[20rpx] text-[24rpx]">|</Text>
           <View className="color-[#1E90FF]" onClick={onRegister}>
             注册账号
           </View>

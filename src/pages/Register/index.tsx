@@ -64,8 +64,8 @@ const Register = () => {
           </ConfigProvider>
         </View>
 
-        <View className="flex-center flex-row mt-[60rpx] color-black font-size-[28rpx]">
-          <View className="h-[28rpx] line-height-[28rpx]" onClick={() => setIsAgree(!isAgree)}>
+        <View className="flex-center flex-row mt-[60rpx] color-black text-[28rpx]">
+          <View className="h-[28rpx] leading-[28rpx]" onClick={() => setIsAgree(!isAgree)}>
             {isAgree ? (
               <Checked size="28rpx" color="#157658" />
             ) : (
