@@ -63,6 +63,13 @@ export default function Index() {
   ];
   const [activeSortId, setActiveSortId] = useState('nearby');
 
+  // 店铺详情
+  const onShopDetail = () => {
+    Taro.navigateTo({
+      url: '/pages/ShopDetail/index',
+    });
+  };
+
   return (
     <BasicLayout>
       <View className="bg-gradient-to-r from-[#157658] to-[#156c76]">
@@ -116,7 +123,10 @@ export default function Index() {
           </View>
         ))}
       </View>
-      <View className="flex flex-col mx-[32rpx] mb-[24rpx] py-[24rpx] px-[16rpx] bg-[#fff] rounded-2">
+      <View
+        className="flex flex-col mx-[32rpx] mb-[24rpx] py-[24rpx] px-[16rpx] bg-[#fff] rounded-2"
+        onClick={onShopDetail}
+      >
         <View className="flex flex-row">
           <View>
             <Image src={coffee} width="100" height="100" radius="10rpx" />

@@ -5,6 +5,7 @@ export default defineAppConfig({
     'pages/Mine/index',
     'pages/Login/index',
     'pages/Register/index',
+    'pages/ShopDetail/index',
   ],
   window: {
     backgroundTextStyle: 'light',
