@@ -3,7 +3,8 @@ import { FC, PropsWithChildren } from 'react';
 
 const BasicLayout: FC<PropsWithChildren> = ({ children }) => {
   const customTheme = {
-    nutuiColorPrimary: '#157658',
+    nutuiColorPrimary: '#157658', // 主题色
+    nutuiRateItemMargin: '4px', // 评分组件间距
   };
   return <ConfigProvider theme={customTheme}>{children}</ConfigProvider>;
 };

@@ -1,5 +1,5 @@
 import { Gift, Trash } from '@nutui/icons-react-taro';
-import { Badge, Image, Popup, Price } from '@nutui/nutui-react-taro';
+import { Avatar, Badge, Image, Popup, Price, Rate } from '@nutui/nutui-react-taro';
 import {
   CommonEventFunction,
   ScrollView,
@@ -195,7 +195,65 @@ const ShopDetail = () => {
           {/* 商品 结束 */}
 
           {/* 评价 开始 */}
-          <SwiperItem>123</SwiperItem>
+          <SwiperItem>
+            <View className="relative w-100% h-100% bg-[#fff]">
+              <View className="flex-center h-[160rpx]">
+                <View className="w-[180rpx] flex-center flex-col">
+                  <View className="color-[#157658] text-[64rpx] mb-[4rpx]">4.5</View>
+                  <View className="text-[24rpx] color-[#555555]">商家评分</View>
+                </View>
+                <View className="flex-1 flex flex-col">
+                  <View className="flex-center flex-row text-[24rpx]">
+                    <View className="color-[#555555]">包装</View>
+                    <View className="px-[12rpx]">
+                      <Rate allowHalf readOnly defaultValue={4.5} />
+                    </View>
+                    <View className="color-[#157658]">4.5</View>
+                  </View>
+                  <View className="flex-center flex-row text-[24rpx]">
+                    <View className="color-[#555555]">口味</View>
+                    <View className="px-[12rpx]">
+                      <Rate allowHalf readOnly defaultValue={4.5} />
+                    </View>
+                    <View className="color-[#157658]">4.5</View>
+                  </View>
+                </View>
+                <View className="w-[200rpx] flex-center flex-col b-l-[2rpx] b-l-solid b-l-[#efefef]">
+                  <View className="text-[54rpx] color-[#999999]">95%</View>
+                  <View className="text-[24rpx] color-[#999999]">配送满意度</View>
+                </View>
+              </View>
+              <View className="w-100% h-[30rpx] bg-[#f5f5f5]"></View>
+              <View className="flex text-[22rpx] p-[20rpx] color-[#999999]">
+                <View className="mr-[26rpx]">
+                  <Avatar
+                    size="small"
+                    src="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
+                  />
+                </View>
+                <View className="flex-1 color-[#000]">
+                  <View className="flex-align justify-between text-[32rpx]">
+                    <Text>用户昵称</Text>
+                    <Text>2024-01-02</Text>
+                  </View>
+                  <View className="flex-align flex-row">
+                    <Text className="mr-[12rpx] text-[26rpx] color-[#999]">评分</Text>
+                    <Rate allowHalf readOnly defaultValue={4.5} />
+                  </View>
+                  <View className="mt-[8rpx] flex flex-col text-[28rpx] color-[#555555] text-left">
+                    <View>用户评价</View>
+                    <View className="w-100% mt-[8rpx] flex flex-wrap">
+                      <View className="w-25% pr-[10rpx] border-box">
+                        <Image src={coffee} width="100%" radius="4px" mode="widthFix" />
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+              {/* 分割线 */}
+              <View className="h-[2rpx] mx-[20rpx] bg-[#f5f5f5]"></View>
+            </View>
+          </SwiperItem>
           {/* 评价 结束 */}
 
           {/* 商家 开始 */}
