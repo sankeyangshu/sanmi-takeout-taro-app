@@ -1,4 +1,4 @@
-import { Gift, Trash } from '@nutui/icons-react-taro';
+import { Alarm, ArrowRight, Gift, Location, Phone, Trash } from '@nutui/icons-react-taro';
 import { Avatar, Badge, Image, Popup, Price, Rate } from '@nutui/nutui-react-taro';
 import {
   CommonEventFunction,
@@ -257,31 +257,66 @@ const ShopDetail = () => {
           {/* 评价 结束 */}
 
           {/* 商家 开始 */}
-          <SwiperItem>123</SwiperItem>
+          <SwiperItem>
+            <View className="w-100% flex flex-col">
+              <View className="h-[80rpx] px-[30rpx] flex bg-[#fff] border-b-[1px] border-b-solid border-b-[#f5f5f5]">
+                <View className="flex-align flex-row flex-[0_0_80%] overflow-hidden">
+                  <Location size="30rpx" />
+                  <Text className="flex-1 ml-[10rpx] text-[28rpx] truncate">商家地址</Text>
+                </View>
+                <View className="flex-align justify-end flex-[0_0_20%]">
+                  <ArrowRight size="30rpx" />
+                </View>
+              </View>
+              <View className="h-[80rpx] px-[30rpx] flex bg-[#fff] border-b-[1px] border-b-solid border-b-[#f5f5f5]">
+                <View className="flex-align flex-row flex-[0_0_80%] overflow-hidden">
+                  <Phone size="30rpx" />
+                  <Text className="flex-1 ml-[10rpx] text-[28rpx] truncate">123456789</Text>
+                </View>
+                <View className="flex-align justify-end flex-[0_0_20%]">
+                  <ArrowRight size="30rpx" />
+                </View>
+              </View>
+              <View className="h-[80rpx] mt-[30rpx] px-[30rpx] bg-[#fff]">
+                <View className="h-100% flex-align overflow-hidden">
+                  <Alarm size="30rpx" />
+                  <Text className="flex-1 ml-[10rpx] text-[28rpx] truncate">
+                    营业时间：2:00-3:00
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </SwiperItem>
           {/* 商家 结束 */}
         </Swiper>
       </View>
 
       {/* 购物车 开始 */}
-      <View className="fixed bottom-[40rpx] w-[92%] left-0 right-0 h-[80rpx] mx-auto rounded-[100rpx] bg-[#fff] flex-align z-[899] shadow-[0_0_20rpx_rgba(0,0,0,.05)]">
-        <View className="h-100% flex-[0_0_70%] flex-align justify-between">
-          <View className="h-100% flex-align pl-[20rpx]" onClick={() => setShowShopCartModel(true)}>
-            <Badge value={1} color="#157658" top="-10" right="-70"></Badge>
-            <View className="flex-align">
-              <Gift size="20" color="#343434" />
-              <Text className="ml-[10rpx] text-[28rpx]">购物袋</Text>
+      {tabIndex === 0 && (
+        <View className="fixed bottom-[40rpx] w-[92%] left-0 right-0 h-[80rpx] mx-auto rounded-[100rpx] bg-[#fff] flex-align z-[899] shadow-[0_0_20rpx_rgba(0,0,0,.05)]">
+          <View className="h-100% flex-[0_0_70%] flex-align justify-between">
+            <View
+              className="h-100% flex-align pl-[20rpx]"
+              onClick={() => setShowShopCartModel(true)}
+            >
+              <Badge value={1} color="#157658" top="-10" right="-70"></Badge>
+              <View className="flex-align">
+                <Gift size="20" color="#343434" />
+                <Text className="ml-[10rpx] text-[28rpx]">购物袋</Text>
+              </View>
+            </View>
+            <View className="pr-[20rpx]">
+              <Price price={0} size="large" thousands />
             </View>
           </View>
-          <View className="pr-[20rpx]">
-            <Price price={0} size="large" thousands />
+          <View className="h-100% flex-[0_0_30%] overflow-hidden rounded-tr-[100rpx] rounded-br-[100rpx]">
+            <View className="w-100% h-100% bg-[#157658] flex-center color-[#fff] text-[30rpx]">
+              去结算
+            </View>
           </View>
         </View>
-        <View className="h-100% flex-[0_0_30%] overflow-hidden rounded-tr-[100rpx] rounded-br-[100rpx]">
-          <View className="w-100% h-100% bg-[#157658] flex-center color-[#fff] text-[30rpx]">
-            去结算
-          </View>
-        </View>
-      </View>
+      )}
+
       {/* 购物车 结束 */}
 
       {/* 购物车弹出层 开始 */}
