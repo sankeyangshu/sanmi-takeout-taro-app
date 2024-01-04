@@ -9,6 +9,7 @@ import {
   Text,
   View,
 } from '@tarojs/components';
+import Taro from '@tarojs/taro';
 import { useState } from 'react';
 import coffee from '@/assets/images/coffee.png';
 import BasicLayout from '@/components/BasicLayout';
@@ -65,6 +66,11 @@ const ShopDetail = () => {
 
   // 显示/隐藏购物车
   const [showShopCartModel, setShowShopCartModel] = useState(false);
+
+  // 去结算
+  const onSubmitPayOrder = () => {
+    Taro.navigateTo({ url: '/pages/PayOrder/index' });
+  };
 
   return (
     <BasicLayout>
@@ -259,7 +265,7 @@ const ShopDetail = () => {
           {/* 商家 开始 */}
           <SwiperItem>
             <View className="w-100% flex flex-col">
-              <View className="h-[80rpx] px-[30rpx] flex bg-[#fff] border-b-[1px] border-b-solid border-b-[#f5f5f5]">
+              <View className="h-[80rpx] px-[30rpx] flex bg-[#fff] border-bottom">
                 <View className="flex-align flex-row flex-[0_0_80%] overflow-hidden">
                   <Location size="30rpx" />
                   <Text className="flex-1 ml-[10rpx] text-[28rpx] truncate">商家地址</Text>
@@ -268,7 +274,7 @@ const ShopDetail = () => {
                   <ArrowRight size="30rpx" />
                 </View>
               </View>
-              <View className="h-[80rpx] px-[30rpx] flex bg-[#fff] border-b-[1px] border-b-solid border-b-[#f5f5f5]">
+              <View className="h-[80rpx] px-[30rpx] flex bg-[#fff] border-bottom">
                 <View className="flex-align flex-row flex-[0_0_80%] overflow-hidden">
                   <Phone size="30rpx" />
                   <Text className="flex-1 ml-[10rpx] text-[28rpx] truncate">123456789</Text>
@@ -310,7 +316,10 @@ const ShopDetail = () => {
             </View>
           </View>
           <View className="h-100% flex-[0_0_30%] overflow-hidden rounded-tr-[100rpx] rounded-br-[100rpx]">
-            <View className="w-100% h-100% bg-[#157658] flex-center color-[#fff] text-[30rpx]">
+            <View
+              className="w-100% h-100% bg-[#157658] flex-center color-[#fff] text-[30rpx]"
+              onClick={onSubmitPayOrder}
+            >
               去结算
             </View>
           </View>
@@ -330,7 +339,7 @@ const ShopDetail = () => {
         }}
       >
         <View className="w-100% h-100% py-[20rpx] px-[40rpx] flex-align flex-col box-border">
-          <View className="w-100% h-[60rpx] mb-[20rpx] leading-[100rpx] flex justify-between flex-row text-[32rpx] border-b-[1px] border-b-solid border-b-[#f5f5f5]">
+          <View className="w-100% h-[60rpx] mb-[20rpx] leading-[100rpx] flex justify-between flex-row text-[32rpx] border-bottom">
             <View className="h-100% flex-center color-[#999999] text-[28rpx]">
               共1件商品，总计
               <Price price={0} size="normal" thousands />
@@ -342,7 +351,7 @@ const ShopDetail = () => {
           </View>
           <ScrollView scrollY className="w-100% h-100% overflow-hidden">
             {/* 商品列表 开始 */}
-            <View className="w-100% flex mb-[20rpx] pb-[20rpx] border-b-[1px] border-b-solid border-b-[#f5f5f5]">
+            <View className="w-100% flex mb-[20rpx] pb-[20rpx] border-bottom">
               <View className="flex-[0_0_30%] flex-center">
                 <View className="w-[140rpx] h-[140rpx] rounded-[6rpx]">
                   <Image

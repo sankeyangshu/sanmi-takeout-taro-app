@@ -6,6 +6,7 @@ export default defineAppConfig({
     'pages/Login/index',
     'pages/Register/index',
     'pages/ShopDetail/index',
+    'pages/PayOrder/index',
   ],
   window: {
     backgroundTextStyle: 'light',
