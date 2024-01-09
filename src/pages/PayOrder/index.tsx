@@ -1,4 +1,4 @@
-import { ArrowRight, Location, Store, Truck } from '@nutui/icons-react-taro';
+import { ArrowRight, Location, Store } from '@nutui/icons-react-taro';
 import { Image, Price } from '@nutui/nutui-react-taro';
 import { Text, View } from '@tarojs/components';
 import { useState } from 'react';
@@ -42,7 +42,7 @@ const PayOrder = () => {
             }
             onClick={() => setDeliveryType(1)}
           >
-            <Truck size="36rpx" />
+            <View className="i-local-delivery text-[38rpx]" />
             <Text className="pl-[20rpx] text-[28rpx]">送货上门</Text>
           </View>
           <View

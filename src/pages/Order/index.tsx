@@ -1,6 +1,7 @@
 import { ArrowRight } from '@nutui/icons-react-taro';
 import { Button, ConfigProvider, Image, Price, Tag } from '@nutui/nutui-react-taro';
 import { ScrollView, Text, View } from '@tarojs/components';
+import Taro from '@tarojs/taro';
 import coffee from '@/assets/images/coffee.png';
 import BasicLayout from '@/components/BasicLayout';
 
@@ -29,9 +30,15 @@ const Order = () => {
     },
   ];
 
+  // 订单详情
+  const onOrderDetail = () => {
+    Taro.navigateTo({ url: '/pages/OrderDetail/index' });
+  };
+
   return (
     <BasicLayout>
       <View className="flex flex-col mx-[32rpx] mb-[24rpx] py-[24rpx] px-[16rpx] bg-[#fff] rounded-2">
+        {/* 店铺名称 开始 */}
         <View className="flex flex-row">
           <Image src={coffee} width="40" height="40" radius="10rpx" />
           <View className="flex-1 flex justify-between flex-col ml-[20rpx] overflow-hidden">
@@ -56,7 +63,10 @@ const Order = () => {
             </View>
           </View>
         </View>
-        <View className="my-[20rpx] flex flex-row">
+        {/* 店铺名称 结束 */}
+
+        {/* 商品内容 开始 */}
+        <View className="my-[20rpx] flex flex-row" onClick={onOrderDetail}>
           <View className="w-80%">
             {goodsList.length > 1 ? (
               <ScrollView scrollX scrollWithAnimation className="w-full whitespace-nowrap">
@@ -83,6 +93,9 @@ const Order = () => {
             </View>
           </View>
         </View>
+        {/* 商品内容 结束 */}
+
+        {/* 操作按钮 开始 */}
         <View className="flex justify-end">
           <ConfigProvider
             theme={{
@@ -94,6 +107,7 @@ const Order = () => {
             </Button>
           </ConfigProvider>
         </View>
+        {/* 操作按钮 结束 */}
       </View>
     </BasicLayout>
   );
