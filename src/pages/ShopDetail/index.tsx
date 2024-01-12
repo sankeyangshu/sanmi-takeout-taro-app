@@ -119,6 +119,7 @@ const ShopDetail = () => {
           </View>
         </View>
         {/* Tab标签页 结束 */}
+
         <Swiper
           current={tabIndex}
           duration={transtionTime}

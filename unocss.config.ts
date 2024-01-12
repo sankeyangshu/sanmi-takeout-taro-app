@@ -28,6 +28,7 @@ export default defineConfig({
       'flex-justify': 'flex justify-center',
       'flex-align': 'flex items-center',
       'border-bottom': 'border-b-[2rpx] border-b-solid border-b-[#f5f5f5]',
+      'border-all': 'border-[2rpx] border-solid border-[#f5f5f5]',
     },
   ],
   transformers: [

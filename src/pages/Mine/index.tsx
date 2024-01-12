@@ -1,9 +1,15 @@
 import { ArrowRight, Heart, Location, Order, Refund } from '@nutui/icons-react-taro';
 import { Avatar } from '@nutui/nutui-react-taro';
 import { View } from '@tarojs/components';
+import Taro from '@tarojs/taro';
 import BasicLayout from '@/components/BasicLayout';
 
 const Mine = () => {
+  // 我的优惠券
+  const onClickMyCoupon = () => {
+    Taro.navigateTo({ url: '/pages/MyCoupon/index' });
+  };
+
   return (
     <BasicLayout>
       {/* 用户信息 开始 */}
@@ -42,7 +48,7 @@ const Mine = () => {
             <ArrowRight size="30rpx" />
           </View>
         </View>
-        <View className="flex-center w-full h-[110rpx] border-bottom">
+        <View className="flex-center w-full h-[110rpx] border-bottom" onClick={onClickMyCoupon}>
           <View className="flex-[0_0_8%]">
             <Refund size="40rpx" />
           </View>
