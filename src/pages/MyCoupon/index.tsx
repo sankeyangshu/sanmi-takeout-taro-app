@@ -65,7 +65,7 @@ const MyCoupon = () => {
         </View>
         {/* 标签 结束 */}
 
-        <View style={{ height: `${contentHeight - 40}px` }}>
+        <View style={{ height: `${contentHeight - 48}px` }}>
           <Swiper
             current={tabIndex}
             duration={transtionTime}
