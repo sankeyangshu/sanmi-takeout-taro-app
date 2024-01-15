@@ -5,6 +5,11 @@ import Taro from '@tarojs/taro';
 import BasicLayout from '@/components/BasicLayout';
 
 const Mine = () => {
+  // 我的订单
+  const onClickMyOrder = () => {
+    Taro.navigateTo({ url: '/pages/Order/index' });
+  };
+
   // 我的优惠券
   const onClickMyCoupon = () => {
     Taro.navigateTo({ url: '/pages/MyCoupon/index' });
@@ -39,7 +44,7 @@ const Mine = () => {
       {/* 用户信息 结束 */}
 
       <View className="mx-[24rpx] my-[24rpx] px-[20rpx] bg-[#fff] rounded-2">
-        <View className="flex-center w-full h-[110rpx] border-bottom">
+        <View className="flex-center w-full h-[110rpx] border-bottom" onClick={onClickMyOrder}>
           <View className="flex-[0_0_8%]">
             <Order size="40rpx" />
           </View>

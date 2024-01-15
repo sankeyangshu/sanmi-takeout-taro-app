@@ -27,12 +27,6 @@ export default defineAppConfig({
         selectedIconPath: 'assets/images/home-active.png', // 选中图标
       },
       {
-        pagePath: 'pages/Order/index',
-        text: '订单',
-        iconPath: 'assets/images/order.png',
-        selectedIconPath: 'assets/images/order-active.png',
-      },
-      {
         pagePath: 'pages/Mine/index',
         text: '我的',
         iconPath: 'assets/images/mine.png',
