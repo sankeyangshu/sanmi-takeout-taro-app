@@ -9,6 +9,7 @@ export default defineAppConfig({
     'pages/PayOrder/index',
     'pages/OrderDetail/index',
     'pages/MyCoupon/index',
+    'pages/MyAddress/index',
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -15,6 +15,11 @@ const Mine = () => {
     Taro.navigateTo({ url: '/pages/MyCoupon/index' });
   };
 
+  // 我的收货地址
+  const onClickMyAddress = () => {
+    Taro.navigateTo({ url: '/pages/MyAddress/index' });
+  };
+
   return (
     <BasicLayout>
       {/* 用户信息 开始 */}
@@ -71,7 +76,7 @@ const Mine = () => {
             <ArrowRight size="30rpx" />
           </View>
         </View>
-        <View className="flex-center w-full h-[110rpx]">
+        <View className="flex-center w-full h-[110rpx]" onClick={onClickMyAddress}>
           <View className="flex-[0_0_8%]">
             <Location size="40rpx" />
           </View>
