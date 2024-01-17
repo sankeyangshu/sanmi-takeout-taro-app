@@ -3,6 +3,7 @@ import { Avatar } from '@nutui/nutui-react-taro';
 import { View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import BasicLayout from '@/components/BasicLayout';
+import Copyright from '@/components/Copyright';
 
 const Mine = () => {
   // 我的订单
@@ -53,6 +54,7 @@ const Mine = () => {
       </View>
       {/* 用户信息 结束 */}
 
+      {/* 菜单 开始 */}
       <View className="mx-[24rpx] my-[24rpx] px-[20rpx] bg-[#fff] rounded-2">
         <View className="flex-center w-full h-[110rpx] border-bottom" onClick={onClickMyOrder}>
           <View className="flex-[0_0_8%]">
@@ -91,6 +93,11 @@ const Mine = () => {
           </View>
         </View>
       </View>
+      {/* 菜单 结束 */}
+
+      {/* 版权信息 开始 */}
+      <Copyright />
+      {/* 版权信息 结束 */}
     </BasicLayout>
   );
 };
