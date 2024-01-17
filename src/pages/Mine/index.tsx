@@ -15,6 +15,11 @@ const Mine = () => {
     Taro.navigateTo({ url: '/pages/MyCoupon/index' });
   };
 
+  // 我的收藏
+  const onClickMyCollect = () => {
+    Taro.navigateTo({ url: '/pages/MyCollect/index' });
+  };
+
   // 我的收货地址
   const onClickMyAddress = () => {
     Taro.navigateTo({ url: '/pages/MyAddress/index' });
@@ -67,7 +72,7 @@ const Mine = () => {
             <ArrowRight size="30rpx" />
           </View>
         </View>
-        <View className="flex-center w-full h-[110rpx] border-bottom">
+        <View className="flex-center w-full h-[110rpx] border-bottom" onClick={onClickMyCollect}>
           <View className="flex-[0_0_8%]">
             <Heart size="40rpx" />
           </View>

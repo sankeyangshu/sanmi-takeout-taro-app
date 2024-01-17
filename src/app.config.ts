@@ -10,6 +10,7 @@ export default defineAppConfig({
     'pages/OrderDetail/index',
     'pages/MyCoupon/index',
     'pages/MyAddress/index',
+    'pages/MyCollect/index',
   ],
   window: {
     backgroundTextStyle: 'light',
