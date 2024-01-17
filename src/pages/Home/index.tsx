@@ -65,6 +65,7 @@ export default function Index() {
 
   return (
     <BasicLayout>
+      {/* 导航栏 开始 */}
       <View className="bg-gradient-to-r from-[#157658] to-[#156c76]">
         <View style={{ height: statusBarHeight }}></View>
         <View
@@ -80,6 +81,9 @@ export default function Index() {
           <View className="ml-[20rpx] text-[32rpx] color-white truncate">三棵杨树</View>
         </View>
       </View>
+      {/* 导航栏 结束 */}
+
+      {/* 搜索 开始 */}
       <View className="sticky top-0 z-2">
         <View className="py-[14rpx] bg-gradient-to-r from-[#157658] to-[#156c76]">
           <ConfigProvider
@@ -91,6 +95,9 @@ export default function Index() {
           </ConfigProvider>
         </View>
       </View>
+      {/* 搜索 结束 */}
+
+      {/* 宫格 开始 */}
       <View className="flex justify-between flex-row mx-[32rpx] mt-[24rpx] py-[24rpx] px-[16rpx] bg-[#fff] rounded-2">
         {menuList.map((item) => (
           <View
@@ -105,6 +112,9 @@ export default function Index() {
           </View>
         ))}
       </View>
+      {/* 宫格 结束 */}
+
+      {/* 排序 开始 */}
       <View className="flex flex-row mx-[32rpx] my-[24rpx] text-gray-700 text-[28rpx]">
         {sortList.map((item) => (
           <View
@@ -116,7 +126,11 @@ export default function Index() {
           </View>
         ))}
       </View>
+      {/* 排序 结束 */}
+
+      {/* 店铺列表 开始 */}
       <ShopCard />
+      {/* 店铺列表 结束 */}
     </BasicLayout>
   );
 }
