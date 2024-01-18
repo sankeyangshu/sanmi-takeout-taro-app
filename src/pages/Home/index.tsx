@@ -18,6 +18,11 @@ export default function Index() {
   // 获取导航栏信息
   const { statusBarHeight, titelBarWidth, titleBarHeight } = useNavBarInfo();
 
+  // 搜索
+  const onClickSearch = () => {
+    Taro.navigateTo({ url: '/pages/Search/index' });
+  };
+
   // 菜单列表
   const menuList = [
     {
@@ -91,7 +96,7 @@ export default function Index() {
               nutuiSearchbarBackground: 'linear-gradient(100deg, #157658, #156c76);',
             }}
           >
-            <SearchBar shape="round" />
+            <SearchBar shape="round" disabled onInputClick={onClickSearch} />
           </ConfigProvider>
         </View>
       </View>

@@ -11,6 +11,7 @@ export default defineAppConfig({
     'pages/MyCoupon/index',
     'pages/MyAddress/index',
     'pages/MyCollect/index',
+    'pages/Search/index',
   ],
   window: {
     backgroundTextStyle: 'light',

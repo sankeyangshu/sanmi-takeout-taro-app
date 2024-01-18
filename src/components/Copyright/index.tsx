@@ -20,4 +20,5 @@ const Copyright = () => {
     </View>
   );
 };
+
 export default Copyright;
