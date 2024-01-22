@@ -23,6 +23,11 @@ export default function Index() {
     Taro.navigateTo({ url: '/pages/Search/index' });
   };
 
+  // 店铺列表
+  const onClickShopList = () => {
+    Taro.navigateTo({ url: '/pages/ShopList/index' });
+  };
+
   // 菜单列表
   const menuList = [
     {
@@ -105,11 +110,7 @@ export default function Index() {
       {/* 宫格 开始 */}
       <View className="flex justify-between flex-row mx-[32rpx] mt-[24rpx] py-[24rpx] px-[16rpx] bg-[#fff] rounded-2">
         {menuList.map((item) => (
-          <View
-            key={item.id}
-            className="flex-center flex-col"
-            onClick={() => Taro.showToast({ title: item.name, icon: 'none' })}
-          >
+          <View key={item.id} className="flex-center flex-col" onClick={onClickShopList}>
             <Image src={item.icon} width="40" height="40" />
             <View className="w-[120rpx] text-[28rpx] mt-[12rpx] text-gray-700 py-[4rpx] truncate">
               {item.name}
