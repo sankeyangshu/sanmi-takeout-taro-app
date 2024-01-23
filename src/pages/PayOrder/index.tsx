@@ -1,5 +1,5 @@
 import { ArrowRight, Location, Store } from '@nutui/icons-react-taro';
-import { Image, Price } from '@nutui/nutui-react-taro';
+import { ConfigProvider, Empty, Image, Popup, Price } from '@nutui/nutui-react-taro';
 import { Text, View } from '@tarojs/components';
 import { useState } from 'react';
 import coffee from '@/assets/images/coffee.png';
@@ -8,6 +8,18 @@ import BasicLayout from '@/components/BasicLayout';
 const PayOrder = () => {
   // 配送方式 - 1.送货上门 / 2.门店自提
   const [deliveryType, setDeliveryType] = useState(1);
+
+  // 是否显示优惠券弹窗
+  const [isShowCouponPopup, setIsShowCouponPopup] = useState(false);
+
+  // 优惠券状态列表
+  const [couponStatus] = useState([
+    { title: '可用', type: 0 },
+    { title: '不可用', type: 1 },
+  ]);
+
+  // 当前选中的优惠券状态
+  const [couponStateCurrent, setCouponStateCurrent] = useState(0);
 
   return (
     <BasicLayout>
@@ -101,6 +113,16 @@ const PayOrder = () => {
           <Price price={10} size="normal" thousands />
         </View>
         <View className="h-[90rpx] flex-align justify-between border-bottom">
+          <View className="text-[28rpx] color-[#232323]">优惠券</View>
+          <View className="flex flex-row" onClick={() => setIsShowCouponPopup(true)}>
+            <View className="text-[24rpx] color-[#999999]">无可用</View>
+            {/* <Price price={0} size="normal" thousands /> */}
+            <View className="ml-[6rpx] flex-align">
+              <ArrowRight size="28rpx" color="#999" />
+            </View>
+          </View>
+        </View>
+        <View className="h-[90rpx] flex-align justify-between border-bottom">
           <View className="text-[28rpx] color-[#232323]">配送费</View>
           <Price price={0} size="normal" thousands />
         </View>
@@ -126,6 +148,52 @@ const PayOrder = () => {
         </View>
       </View>
       {/* 去支付 结束 */}
+
+      {/* 优惠券弹出层 开始 */}
+      <Popup
+        visible={isShowCouponPopup}
+        style={{ height: '70%', backgroundColor: '#f5f5f5' }}
+        position="bottom"
+        onClose={() => setIsShowCouponPopup(false)}
+      >
+        <View className="w-full h-100%">
+          <View className="w-full h-[100rpx] mb-[20rpx] flex-center text-[32rpx] font-bold bg-[#fff]">
+            选择优惠券
+          </View>
+          <View className="w-full h-[100rpx] flex flex-row bg-[#fff]">
+            {couponStatus.map((item) => (
+              <View
+                key={item.type}
+                className="flex-1 flex-center flex-col"
+                onClick={() => setCouponStateCurrent(item.type)}
+              >
+                <View
+                  className={`'lh-[76rpx] text-[30rpx]' ${
+                    item.type === couponStateCurrent ? 'color-[#157658]' : 'color-[#333]'
+                  }`}
+                >
+                  {item.title}
+                </View>
+                <View
+                  className={`'w-[60rpx] h-[4rpx]' ${
+                    item.type === couponStateCurrent ? 'bg-[#157658]' : 'bg-[#fff]'
+                  }`}
+                ></View>
+              </View>
+            ))}
+          </View>
+          <View className="h-[calc(100%-220rpx)]">
+            <ConfigProvider
+              theme={{
+                nutuiGray1: '#f5f5f5',
+              }}
+            >
+              <Empty description="无优惠券" status="empty" />
+            </ConfigProvider>
+          </View>
+        </View>
+      </Popup>
+      {/* 优惠券弹出层 结束 */}
     </BasicLayout>
   );
 };
