@@ -13,6 +13,7 @@ export default defineAppConfig({
     'pages/MyAddress/index',
     'pages/MyCollect/index',
     'pages/Search/index',
+    'pages/AboutUs/index',
   ],
   window: {
     backgroundTextStyle: 'light',
